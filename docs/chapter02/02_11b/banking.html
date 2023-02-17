@@ -33,6 +33,33 @@
  *          display balance;
  *      }
  */
+    let balance = parseFloat(prompt("Your balance amount = $"));
+    let options = prompt("Enter D for deposit or W for withdrawal");
+
+    if (options === "D" || options === "d") {
+        let amount = parseFloat(prompt("Deposit amount = $"));
+        if (amount >= 0) {
+            if (amount >= 10000) {
+                display("funds may be on hold");
+            }
+            balance += amount;
+            display("Your deposit of $" + amount + " was added to your account. " + "Your new balance is = $" + balance + ".");
+        } else {
+            display("Invalid amount; must be >= 0");
+        }          
+    } else if (options === "W" || options === "w") {
+        amount = parseFloat(prompt("Withdrawal amount = $"));
+        if (amount >= 0 && amount <= balance) {
+            balance -= amount;
+            display("You withdrew $" + amount + ". Your new balance is = $" + balance + ".");
+        } else {
+            display("Invalid amount; must be <= current balance");
+    }} else {
+        display("Invalid transaction: " + options + ".");
+        display("Enter D for deposit or W for withdrawal");
+    }
+
+
         </script>
     </body>
 </html>

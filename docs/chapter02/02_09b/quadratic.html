@@ -27,6 +27,24 @@
  *        (-b + sqrt(b^2 - 4ac)) / 2a and
  *        (-b - sqrt(b^2 - 4ac) / 2a
  */
+            let a = parseInt(prompt("choose a value for a")); 
+            let b = parseInt(prompt("choose a value for b")); 
+            let c = parseInt(prompt("choose a value for c"));
+            display(`${a}x ^ 2 + ${b}x + ${c} = 0`);
+            let discriminant = (b ** 2) - (4 * a * c);
+
+            if (discriminant < 0 ) {
+                display("there are no real number solutions.");
+            } else if (discriminant === 0) {
+                let solution = - b / 2 * a;
+                display("There is only one solution = " + solution);
+            } else {
+                let solution1 = (- b + Math.sqrt(discriminant)) / 2 * a;
+                let solution2 = (- b - Math.sqrt(discriminant)) / 2 * a;
+                display("solution 1 = " + solution1);
+                display("solution 2 = " + solution2);
+            }
+
         </script>
     </body>
 </html>

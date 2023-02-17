@@ -27,6 +27,17 @@
  *         their balance.
  *   - Print a "Thank you for banking with us" message
  */
+            let currentBalance = parseFloat(prompt("Current balance $"));
+            let withdrawalAmount = parseFloat(prompt("Withdrawal amount: $"));
+
+            if (withdrawalAmount <= currentBalance) {
+                currentBalance -= withdrawalAmount;
+                display("New balance = $" + currentBalance);
+            } else {
+                display("Sorry, you can't withdraw more money than your current balance holds");
+            }
+
+            display("Thank you for banking with us!");
 
         </script>
     </body>

@@ -28,7 +28,28 @@
      *   - Add one to number of trials
      * Calculate and display average number of rolls
      */
+    let trials = 0;
+    let totalRolls = 0;
 
+    while (trials < 10) {
+      nRolls = 0;
+      let finished = false;
+      while (!finished) {
+        let randomNum1 = Math.floor(Math.random() *6 + 1);
+        let randomNum2 = Math.floor(Math.random() * 6 + 1);
+        nRolls += 1;
+        if (randomNum1 === randomNum2) {
+          finished = true;
+        }
+      }
+      
+      display("Number of rolls: " + nRolls);
+      totalRolls += nRolls;
+      trials += 1;
+    }
+
+      let average = totalRolls / 10;
+      display("Average number of rolls is " + average);
 
   </script>
 </body>
